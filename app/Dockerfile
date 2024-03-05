@@ -5,7 +5,7 @@ RUN mkdir /project
 WORKDIR /project
 
 COPY . .
-
+RUN npm config set registry https://registry.npmmirror.com
 RUN npm install global  @vue/cli
 RUN yarn install
 ENV HOST=0.0.0.0
