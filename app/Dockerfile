@@ -5,7 +5,6 @@ RUN mkdir /project
 WORKDIR /project
 
 COPY . .
-RUN npm config set strict-ssl false && npm install -g cnpm@7.1.0 --registry=https://registry.npm.taobao.org
 RUN npm install global  @vue/cli
 RUN yarn install
 ENV HOST=0.0.0.0
