@@ -7,7 +7,7 @@ WORKDIR /project
 COPY . .
 RUN npm config set strict-ssl false
 RUN npm install global  @vue/cli
-RUN npm config set registry https://registry.npmmirror.com
+RUN yarn config set registry https://registry.npmmirror.com
 RUN yarn install
 ENV HOST=0.0.0.0
 CMD ["npm", "run", "serve"]
