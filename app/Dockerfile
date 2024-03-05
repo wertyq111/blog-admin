@@ -5,10 +5,10 @@ RUN mkdir /project
 WORKDIR /project
 
 COPY . .
-RUN npm config set strict-ssl false
+RUN npm config set strict-ssl false && npm install -g cnpm@7.1.0 --registry=https://registry.npm.taobao.org
 RUN npm install global  @vue/cli
 RUN yarn config set registry https://registry.npmmirror.com
-RUN yarn install
+RUN yarn install --pure-lockfile
 ENV HOST=0.0.0.0
 CMD ["npm", "run", "serve"]
 
